@@ -15,12 +15,245 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================= */
+
+.wrapper {
+  min-height: 100vh;
+}
+
+.header {
+  padding: 25px 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .65);
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header nav .theme-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ========================================= */
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* ========================================= */
+
+main {
+  margin: 50px 0;
+}
+
+/* ========================================= */
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.filter-container form {
+  position: relative;
+}
+
+.filter-container input,
+.filter-container select {
+  padding: 15px;
+  font-size: 16px;
+  border: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .35);
+}
+
+.filter-container input {
+  width: 450px;
+  padding-left: 50px;
+  color: #555;
+}
+
+.filter-container svg {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.filter-container .region-filter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #000;
+}
+
+.filter-container select {
+  width: 250px;
+}
+
+/* ========================================= */
+
+.country-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.country-list .country-item {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .35);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.country-list .country-item img {
+  width: 100%;
+  height: 210px;
+}
+
+.country-list .country-item .country-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 30px;
+}
+
+.country-list .country-item .country-info .country-name {
+  margin-bottom: 15px;
+}
+
+.country-list .country-item .country-info span {
+  display: flex;
+  gap: 5px;
+}
+
+/* ========================================= */
+/*                 DARK THEME                */
+/* ========================================= */
+
+.dark {
+  background-color: #212121;
+}
+
+.dark .header {
+  background-color: #212121;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, .25);
+}
+
+.dark .country-item {
+  background-color: #212121;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, .25);
+}
+
+.dark .filter-container input,
+.dark .filter-container select {
+  background-color: #212121;
+  color: #fff;
+  box-shadow: 0 0 5px rgba(255, 255, 255, .45);
+}
+
+.dark .filter-container .region-filter {
+  color: #fff;
+}
+
+
+
+/* ========================================= */
+/*                MOBILE SCREEN              */
+/* ========================================= */
+
+@media screen and (max-width: 768px) {
+  main {
+    margin: 10px 0 50px 0;
   }
-  body {
-    color: white;
-    background: black;
+
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .filter-container form {
+    width: 100%;
+  }
+
+  .filter-container input,
+  .filter-container select {
+    width: 100%;
+  }
+
+  .filter-container .region-filter {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .country-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  main {
+    margin: 10px 0 50px 0;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .filter-container form {
+    width: 100%;
+  }
+
+  .filter-container input,
+  .filter-container select {
+    width: 100%;
+  }
+
+  .filter-container .region-filter {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .country-list {
+    grid-template-columns: auto;
   }
 }
